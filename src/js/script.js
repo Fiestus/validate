@@ -45,7 +45,6 @@ validate(form, {
 
 
 
-
 // console.log(form.validate());
 //
 // //
