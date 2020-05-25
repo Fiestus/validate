@@ -1,7 +1,7 @@
 "use strict";
 
-let start                = document.getElementById('start'),
-
+let money, time,
+    start                = document.getElementById('start'),
     budget               = document.getElementsByClassName('budget-value')[0],
     dayBudget            = document.getElementsByClassName('daybudget-value')[0],
     level                = document.getElementsByClassName('level-value')[0],
@@ -10,15 +10,11 @@ let start                = document.getElementById('start'),
     income               = document.getElementsByClassName('income-value')[0],
     monthSavings         = document.getElementsByClassName('monthsavings-value')[0],
     yearSavings          = document.getElementsByClassName('yearsavings-value')[0],
-
     expensesItem         = document.getElementsByClassName('expenses-item'),
-
     expensesItemBtn      = document.getElementsByTagName('button')[0],
     optionalexpensesBtn  = document.getElementsByTagName('button')[1],
     countBudgetBtn       = document.getElementsByTagName('button')[2],
-
     optionalexpensesItem = document.querySelectorAll('.optionalexpenses-item'),
-
     chooseIncomeItem     = document.querySelector('.choose-income'),
     savings              = document.querySelector('#savings'),
     chooseSumItem        = document.querySelector('.choose-sum'),
@@ -26,8 +22,6 @@ let start                = document.getElementById('start'),
     yearValue            = document.querySelector('.year-value'),
     monthValue           = document.querySelector('.month-value'),
     dayValue             = document.querySelector('.day-value');
-
-let money, time;
 
 start.addEventListener('click', function (event) {
     time = prompt('Введите дату в формате YYYY-MM-DD', '');
