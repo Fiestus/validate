@@ -181,5 +181,64 @@ function addZero(number) {
     return number;
 }
 
-let deadline = '2020-06-09 19:25:00';
+let deadline = '2020-06-24 19:25:00';
 setTimer('timer', deadline);
+
+// Modal
+
+let more = document.querySelector('.more'),
+    overlay = document.querySelector('.overlay'),
+    close =  document.querySelector('.popup-close'),
+    tabsContent = document.querySelector('.tabs-content');
+
+more.addEventListener('click', function (event) {
+   showModal(this);
+});
+
+close.addEventListener('click', function (event) {
+    hideModal();
+});
+
+tabsContent.addEventListener('click', function (event) {
+   let target = event.target;
+   
+   if (target && target.classList.contains('description-btn')) {
+       showModal(target);
+   }
+});
+
+function showModal(el = null) {
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+
+    if (el !== null) {
+        el.classList.add('more-splash');
+
+        window.modalTarget = el;
+    }
+}
+
+function hideModal() {
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+
+    if (window.modalTarget && window.modalTarget.classList.contains('more-splash')) {
+        window.modalTarget.classList.remove('more-splash');
+    }
+}
+
+// lesson 11
+
+let user = {
+    name: 'Andrey',
+    surname: 'Meshkov'
+};
+
+let age = document.getElementById('age');
+function showUser(surname, name) {
+    alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+}
+
+
+// showUser.call(age, user.surname, user.name);
+// showUser.apply(age, [user.surname, user.name]);
